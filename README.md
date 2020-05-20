@@ -16,6 +16,7 @@ Then restart and run `:PlugInstall`.
 You can bind Sling to your key combo of choice like so
 
 ```vim
+" Default Sling path is ./sling.sh
 noremap <F5> :Sling<CR>
 ```
 
