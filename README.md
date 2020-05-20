@@ -8,9 +8,32 @@ Using [vim-plug](https://github.com/junegunn/vim-plug):
 Plug 'Sn00pbom/vim-sling'
 ```
 
-into your `init.vim`. Restart and run `:PlugInstall`.
+drop into your `init.vim`. Restart, and run `:PlugInstall`.
 
 ## Example Configuration
+You can bind Sling to your key combo of choice like so
+
 ```vim
-nmap <F5> :Sling launch.sh
+noremap <F5> :Sling<CR>
+```
+
+You can set a default path name
+
+```vim
+let g:sling#sling_path = "gnils.sh"
+noremap <F5> :Sling<CR>
+```
+
+You can also set an absolute path as default!
+
+```vim
+let g:sling#sling_path = "~/my_folder/gnils.sh"
+noremap <F5> :Sling<CR>
+```
+
+Or you can bind multiple sling files by calling directly
+
+```vim
+noremap <F5> call Sling("sling1.sh")<CR>
+noremap <F6> call Sling("sling2.sh")<CR>
 ```
