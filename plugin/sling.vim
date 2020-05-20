@@ -4,7 +4,7 @@ function! Sling(path)
     if filereadable(a:path)
 	let l:lines = readfile(a:path)
     else
-	echom "No sling.sh in directory!"
+	echom "No " + a:path + " in directory!"
 	return
     endif
     terminal
