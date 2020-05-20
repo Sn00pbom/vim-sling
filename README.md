@@ -4,11 +4,13 @@ Sling.nvim is a plugin for Neovim that allows you to setup run configurations an
 ## Installation
 Using [vim-plug](https://github.com/junegunn/vim-plug):
 
+Add to your `init.vim`
+
 ```vim
 Plug 'Sn00pbom/vim-sling'
 ```
 
-drop into your `init.vim`. Restart, and run `:PlugInstall`.
+Then restart and run `:PlugInstall`.
 
 ## Example Configuration
 You can bind Sling to your key combo of choice like so
