@@ -1,5 +1,5 @@
 # vim-sling
-Sling.nvim is a plugin for neo-vim that allows you to setup run configurations and execute in a neo-vim terminal.
+Sling.nvim is a plugin for Neovim that allows you to setup run configurations and execute in a Neovim terminal.
 
 ## Installation
 Using [vim-plug](https://github.com/junegunn/vim-plug):
