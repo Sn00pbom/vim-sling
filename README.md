@@ -40,3 +40,9 @@ Or you can bind multiple sling files by calling directly
 noremap <F5> call Sling("sling1.sh")<CR>
 noremap <F6> call Sling("sling2.sh")<CR>
 ```
+
+By default, if a sling file is missing, a buffer wil open up to edit it. This behavior can be changed with the following
+
+```vim
+let g:sling#edit_on_missing = 0
+```

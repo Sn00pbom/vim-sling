@@ -1,10 +1,12 @@
-let g:sling#sling_path = "sling.sh"
 
 function! Sling(path)
     if filereadable(a:path)
 	let l:lines = readfile(a:path)
     else
-	echo "No " . a:path . " found!"
+	echo "Missing sling file @ " . a:path
+	if g:sling#edit_on_missing
+	    execute "edit " . a:path
+	endif
 	return
     endif
     terminal
