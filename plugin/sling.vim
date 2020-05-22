@@ -9,7 +9,8 @@ function! Sling(path)
 	endif
 	return
     endif
-    terminal
+    " terminal
+    vsplit term://$SHELL
     startinsert
     let job_id = b:terminal_job_id
     echo "Slinging " . a:path . "!"
