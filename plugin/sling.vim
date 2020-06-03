@@ -24,7 +24,8 @@ function! Sling(path)
 endfunction
 
 function! SlingShell(path)
-    execute "!chmod +x " . a:path . " && " . a:path
+    silent execute "!chmod +x " . a:path
+    execute "!" . a:path
 endfunction
 
 function! SlingTerminal(lines)
