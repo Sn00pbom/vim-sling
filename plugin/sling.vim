@@ -2,6 +2,10 @@
 function! Sling(path)
     if filereadable(a:path)
 	let l:lines = readfile(a:path)
+	if len(l:lines) == 0 " Sling file is empty
+	    echo 'Empty Sling!'
+	    return
+	endif
     else
 	echo "Missing sling file @ " . a:path
 	if g:sling#edit_on_missing
@@ -12,6 +16,19 @@ function! Sling(path)
 
     echo "Slinging " . a:path . "!"
 
+    if l:lines[0] =~ "^#!" "File starts with shebang
+	call SlingShell(a:path)
+    else
+	call SlingTerminal(l:lines)
+    endif
+endfunction
+
+function! SlingShell(path)
+    execute "!chmod +x " . a:path . " && " . a:path
+endfunction
+
+function! SlingTerminal(lines)
+    let l:lines = a:lines
     if has('nvim')
 	vsplit term://$SHELL
 	startinsert
