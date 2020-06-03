@@ -18,6 +18,14 @@ Plug 'Sn00pbom/vim-sling'
 
 Then restart and run `:PlugInstall`.
 
+## Sling Files
+By default, Sling looks for a `.sling` file in the working directory.
+Executing `:Sling` will launch the file in one of two modes:
+
+- **Shell Mode:** If the first line of the file begins with a shebang(`#!`), the file will be executed as a shell script.
+- **Terminal Mode:** If the first line of the file  *doesn't* begin with a shebang(`#!`), the file will directly send inputs to the terminal
+spawned at run time.
+
 ## Example Configuration
 You can bind Sling to your key combo of choice like so
 
@@ -29,7 +37,7 @@ nnoremap <F5> :Sling<CR>
 You can set a default path name if you like
 
 ```vim
-let g:sling#sling_path = ".gnils"
+let g:sling#sling_path = "./.gnils"
 nnoremap <F5> :Sling<CR>
 ```
 
@@ -43,8 +51,8 @@ nnoremap <F5> :Sling<CR>
 Or you can bind multiple sling files by calling directly
 
 ```vim
-nnoremap <F5> call Sling(".sling1")<CR>
-nnoremap <F6> call Sling(".sling2")<CR>
+nnoremap <F5> call Sling("./.sling1")<CR>
+nnoremap <F6> call Sling("./.sling2")<CR>
 ```
 
 By default, if a sling file is missing, a buffer will open to edit it. This behavior can be changed with the following
